@@ -22,7 +22,7 @@ const IssueHitsListItem = (props)=> {
       return (
         <div className={bemBlocks.item().mix(bemBlocks.container("item"))} data-qa="hit">
           <div className={bemBlocks.item("details")}>
-            <a href={url} target="_blank">
+            <a href={url} target="_blank" rel="noopener noreferrer">
               <h2 className={bemBlocks.item("title") + " issue"} dangerouslySetInnerHTML={{__html:source.title}}></h2>
             </a>
             <p className={bemBlocks.item("details")} dangerouslySetInnerHTML={{__html:source.body}}></p>
@@ -34,7 +34,7 @@ const IssueHitsListItem = (props)=> {
       return (
         <div className={bemBlocks.item().mix(bemBlocks.container("item"))} data-qa="hit">
           <div className={bemBlocks.item("details")}>
-            <a href={url} target="_blank">
+            <a href={url} target="_blank" rel="noopener noreferrer">
               <h2 className={bemBlocks.item("title") + " comment"}>Comment (Issue {source.issueNumber})</h2>
             </a>
             <p className={bemBlocks.item("details")} dangerouslySetInnerHTML={{__html:source.body}}></p>
@@ -54,7 +54,7 @@ const formatCount = (count) => {
   if(count.value){
     return count.value.toString()
   } else {
-    return "0";
+    return count || "0";
   }
 }
 
